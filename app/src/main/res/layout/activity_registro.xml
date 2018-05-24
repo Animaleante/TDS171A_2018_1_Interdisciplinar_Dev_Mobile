@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/app_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/edit_registro_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_login"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/edit_registro_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_senha"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/edit_registro_confirm_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_confirm_senha"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/edit_registro_nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_nome"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/edit_registro_nasc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_nasc"
+        android:textAlignment="center"
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_rd_sexo"
+        android:paddingLeft="10sp"
+        android:paddingRight="20dp"
+        />
+
+        <RadioButton
+        android:id="@+id/rd_registro_masc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_rd_masc"
+        />
+
+        <RadioButton
+            android:id="@+id/rd_registro_fem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_rd_fem"
+            />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cb_registro_notificacao_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cb_envio_email"
+        />
+    <Button
+        android:id="@+id/btn_registro_registrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_registro_registrar"/>
+
+</LinearLayout>

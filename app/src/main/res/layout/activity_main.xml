@@ -6,11 +6,71 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
-    <TextView
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"/>
+        android:columnCount="2"
+        >
+        <TextView
+            android:id="@+id/app_Name"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="140dp"
+            android:textSize="32dp"
+            android:layout_column="0"
+            />
+        <Button
+            android:id="@+id/btn_main_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="@string/btn_main_logar"
+            android:background="@color/colorPrimaryDark"
+            android:layout_column="1"
+            android:onClick="carregaItemMenu"
+            />
+
+    </GridLayout>
+
+
+
+    <EditText
+        android:id="@+id/edt_main_pesquisar"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_pesquisar"
+        />
+    <Button
+        android:id="@+id/btn_main_pesquisa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_pesquisa"
+        android:layout_gravity="right"
+        android:onClick="carregaItemMenu"
+        />
+
+
+    <Button
+        android:id="@+id/btn_main_fav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_main_fav"
+        android:background="@color/colorAccent"
+        android:textAlignment="center"
+        android:onClick="carregaItemMenu"
+        />
+
+    <Button
+        android:id="@+id/btn_logoff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_logoff"
+        android:onClick="efetuarLogoff"
+        />
+
 
 </LinearLayout>

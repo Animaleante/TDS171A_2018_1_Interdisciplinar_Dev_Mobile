@@ -8,4 +8,19 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Manage</string>
     <string name="nav_header_title">My header title</string>
+    <string name="btn_main_logar">Logar</string>
+    <string name="hint_pesquisar">Insira um ingrediente para pesquisar!</string>
+    <string name="btn_pesquisa">Pesquisar</string>
+    <string name="btn_main_fav">Favoritos ♥</string>
+    <string name="btn_logoff">Deslogar</string>
+    <string name="hint_login">Informe o login</string>
+    <string name="hint_rd_masc">Masculino</string>
+    <string name="hint_rd_fem">Feminino</string>
+    <string name="hint_rd_sexo">Selecione seu sexo</string>
+    <string name="hint_senha">Informe a senha</string>
+    <string name="cb_envio_email">Receber e-mails</string>
+    <string name="btn_registro_registrar">Criar usuário</string>
+    <string name="hint_confirm_senha">Confirme a senha</string>
+    <string name="hint_nome">Informe seu Nome</string>
+    <string name="hint_nasc">Informe a data de Nascimento</string>
 </resources>
