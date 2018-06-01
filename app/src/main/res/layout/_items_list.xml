@@ -68,8 +68,7 @@
             android:layout_row="1"
             android:layout_column="3"
             android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:layout_gravity="right"/>
+            android:paddingRight="5dp"/>
 
     </GridLayout>
 </LinearLayout>

@@ -7,14 +7,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.tds171a.soboru.DAO.usuario.Usuario;
 import com.tds171a.soboru.R;
+import com.tds171a.soboru.factory.APIFactory;
+import com.tds171a.soboru.models.usuario.Usuario;
 
 public class MainActivity extends Activity {
 
     public static Usuario usuarioLogado;
     public static TextView nomeUsuario;
     public static Button btn_Logoff;
+    public static Button btn_Teste;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class MainActivity extends Activity {
             nomeUsuario = findViewById(R.id.app_Name);
             btn_Logoff  = findViewById(R.id.btn_logoff);
             nomeUsuario.setText(R.string.app_name);
+            btn_Teste = findViewById(R.id.btn_teste);
             //TODO: Criar regra para deixar botão logoff invisível.
         }else{
             nomeUsuario = (TextView) findViewById(R.id.app_Name);
@@ -59,4 +62,8 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    public void carregarAPI(View v){
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+        APIFactory factory = new APIFactory(this, 1, "pokemon/1/", null);
+    }
 }

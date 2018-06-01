@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.facebook.stetho.Stetho;
-import com.tds171a.soboru.DAO.usuario.UsuarioDAO;
+import com.tds171a.soboru.models.usuario.UsuarioDAO;
 import com.tds171a.soboru.R;
 import com.tds171a.soboru.util.Util;
 
