@@ -17,4 +17,7 @@ public class UsuarioDAO {
 
     }
 
+    public long validaUsuario(String login, String s) {
+        return 0;
+    }
 }

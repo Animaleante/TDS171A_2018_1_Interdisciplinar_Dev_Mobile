@@ -31,7 +31,7 @@ public class LoginActivity extends Activity {
         String login = editEmail.getText().toString();
         String senha = editSenha.getText().toString();
 
-        UsuarioDAO usuarioDAO = new UsuarioDAO(this);
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
         long idUsuario = usuarioDAO.validaUsuario(login, Util.toMD5(senha));
         if (idUsuario > 0){
             Toast.makeText(this,"Usuário Logado!", Toast.LENGTH_SHORT).show();
