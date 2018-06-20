@@ -7,6 +7,7 @@ import com.tds171a.soboru.models.receitaIngrediente.ReceitaIngrediente;
 import com.tds171a.soboru.models.utensilio.Utensilio;
 import com.tds171a.soboru.models.usuario.Usuario;
 
+import java.util.Date;
 import java.util.List;
 
 public class Receita {
@@ -26,6 +27,9 @@ public class Receita {
 	private String slug;
 	private boolean aprovado;
 	private boolean pontuou;
+	private Date CreatedAt;
+	private Date UpdatedAt;
+	private Date DeletedAt;
 	
 	/**
 	 * 
@@ -267,5 +271,29 @@ public class Receita {
 
 	public void setNumComentarios(int numComentarios) {
 		this.numComentarios = numComentarios;
+	}
+
+	public Date getCreatedAt() {
+		return CreatedAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		CreatedAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return UpdatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		UpdatedAt = updatedAt;
+	}
+
+	public Date getDeletedAt() {
+		return DeletedAt;
+	}
+
+	public void setDeletedAt(Date deletedAt) {
+		DeletedAt = deletedAt;
 	}
 }

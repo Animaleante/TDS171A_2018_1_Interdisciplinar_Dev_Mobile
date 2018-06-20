@@ -1,5 +1,7 @@
 package com.tds171a.soboru.models.categoria;
 
+import java.util.Date;
+
 /**
  * Classe de ValueObject do Categoria
  * @author Diogo
@@ -22,6 +24,10 @@ public class Categoria {
     private int idSuperCategoria;
     
     private String slug;
+
+    private Date CreatedAt;
+    private Date UpdatedAt;
+    private Date DeletedAt;
 
     /**
      * Construtor da classe de Categoria
@@ -110,4 +116,32 @@ public class Categoria {
 	public void setSlug(String slug) {
 		this.slug = slug;
 	}
+
+    public boolean isSelecionavel() {
+        return selecionavel;
+    }
+
+    public Date getCreatedAt() {
+        return CreatedAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        CreatedAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return UpdatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        UpdatedAt = updatedAt;
+    }
+
+    public Date getDeletedAt() {
+        return DeletedAt;
+    }
+
+    public void setDeletedAt(Date deletedAt) {
+        DeletedAt = deletedAt;
+    }
 }

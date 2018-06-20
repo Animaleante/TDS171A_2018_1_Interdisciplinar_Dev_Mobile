@@ -1,5 +1,7 @@
 package com.tds171a.soboru.models.ingrediente;
 
+import java.util.Date;
+
 /**
  * Classe de ValueObject do Ingrediente
  * @author Diogo
@@ -16,6 +18,10 @@ public class Ingrediente {
 	 * Parametro nome do Ingrediente
 	 */
 	private String nome;
+
+	private Date CreatedAt;
+	private Date UpdatedAt;
+	private Date DeletedAt;
 
 	/**
 	 * Construtor da classe de Ingrediente
@@ -68,5 +74,29 @@ public class Ingrediente {
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public Date getCreatedAt() {
+		return CreatedAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		CreatedAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return UpdatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		UpdatedAt = updatedAt;
+	}
+
+	public Date getDeletedAt() {
+		return DeletedAt;
+	}
+
+	public void setDeletedAt(Date deletedAt) {
+		DeletedAt = deletedAt;
 	}
 }

@@ -7,6 +7,8 @@ import com.tds171a.soboru.models.ingrediente.Ingrediente;
 import com.tds171a.soboru.models.medida.Medida;
 import com.tds171a.soboru.models.receita.Receita;
 
+import java.util.Date;
+
 /**
  * @author Sony
  *
@@ -57,6 +59,10 @@ public class ReceitaIngrediente {
 	 * 
 	 */
 	private Receita receita;
+
+	private Date CreatedAt;
+	private Date UpdatedAt;
+	private Date DeletedAt;
 	
 	/**
 	 * 
@@ -197,5 +203,29 @@ public class ReceitaIngrediente {
 	 */
 	public void setReceita(Receita receita) {
 		this.receita = receita;
+	}
+
+	public Date getCreatedAt() {
+		return CreatedAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		CreatedAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return UpdatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		UpdatedAt = updatedAt;
+	}
+
+	public Date getDeletedAt() {
+		return DeletedAt;
+	}
+
+	public void setDeletedAt(Date deletedAt) {
+		DeletedAt = deletedAt;
 	}
 }

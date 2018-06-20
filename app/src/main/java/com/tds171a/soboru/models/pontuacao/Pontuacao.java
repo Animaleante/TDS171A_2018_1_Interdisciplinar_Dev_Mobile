@@ -3,6 +3,8 @@
  */
 package com.tds171a.soboru.models.pontuacao;
 
+import java.util.Date;
+
 /**
  * @author Diogo
  *
@@ -14,6 +16,10 @@ public class Pontuacao {
 	
 	private String receitaNome;
 	private String usuarioNome;
+
+	private Date CreatedAt;
+	private Date UpdatedAt;
+	private Date DeletedAt;
 	
 	public Pontuacao() {
 		// TODO Auto-generated constructor stub
@@ -78,5 +84,29 @@ public class Pontuacao {
 	 */
 	public void setUsuarioNome(String usuarioNome) {
 		this.usuarioNome = usuarioNome;
+	}
+
+	public Date getCreatedAt() {
+		return CreatedAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		CreatedAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return UpdatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		UpdatedAt = updatedAt;
+	}
+
+	public Date getDeletedAt() {
+		return DeletedAt;
+	}
+
+	public void setDeletedAt(Date deletedAt) {
+		DeletedAt = deletedAt;
 	}
 }

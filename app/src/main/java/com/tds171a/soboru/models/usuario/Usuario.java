@@ -21,6 +21,9 @@ public class Usuario {
 	private boolean notificacaoEmail;
 	private Role role;
 	private String senhaConfirmacao;
+	private Date CreatedAt;
+	private Date UpdatedAt;
+	private Date DeletedAt;
 
 
 	public Usuario() {
@@ -195,5 +198,29 @@ public class Usuario {
 	 */
 	public void setSenhaConfirmacao(String senhaConfirmacao) {
 		this.senhaConfirmacao = senhaConfirmacao;
+	}
+
+	public Date getCreatedAt() {
+		return CreatedAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		CreatedAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return UpdatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		UpdatedAt = updatedAt;
+	}
+
+	public Date getDeletedAt() {
+		return DeletedAt;
+	}
+
+	public void setDeletedAt(Date deletedAt) {
+		DeletedAt = deletedAt;
 	}
 }

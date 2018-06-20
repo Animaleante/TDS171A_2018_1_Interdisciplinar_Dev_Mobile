@@ -6,6 +6,8 @@ package com.tds171a.soboru.models.comentario;
 import com.tds171a.soboru.models.receita.Receita;
 import com.tds171a.soboru.models.usuario.Usuario;
 
+import java.util.Date;
+
 /**
  * @author Diogo
  *
@@ -21,6 +23,10 @@ public class Comentario {
 	
 	private Receita receita;
 	private Usuario usuario;
+
+	private Date CreatedAt;
+	private Date UpdatedAt;
+	private Date DeletedAt;
 	
 	public Comentario() {
 		id = -1;
@@ -135,5 +141,29 @@ public class Comentario {
 	 */
 	public void setUsuarioNome(String usuarioNome) {
 		this.usuarioNome = usuarioNome;
+	}
+
+	public Date getCreatedAt() {
+		return CreatedAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		CreatedAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return UpdatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		UpdatedAt = updatedAt;
+	}
+
+	public Date getDeletedAt() {
+		return DeletedAt;
+	}
+
+	public void setDeletedAt(Date deletedAt) {
+		DeletedAt = deletedAt;
 	}
 }

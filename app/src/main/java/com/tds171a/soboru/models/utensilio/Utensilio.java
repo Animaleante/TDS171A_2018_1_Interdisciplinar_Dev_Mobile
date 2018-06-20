@@ -1,5 +1,7 @@
 package com.tds171a.soboru.models.utensilio;
 
+import java.util.Date;
+
 /**
  * Classe de ValueObject do Utensilio
  * @author Diogo
@@ -16,6 +18,9 @@ public class Utensilio {
 	 * Par�metro de nome do Utensilio
 	 */
 	private String nome;
+	private Date CreatedAt;
+	private Date UpdatedAt;
+	private Date DeletedAt;
 
 	/**
 	 * Construtor da classe de Utensilio
@@ -69,4 +74,27 @@ public class Utensilio {
 		this.nome = nome;
 	}
 
+	public Date getCreatedAt() {
+		return CreatedAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		CreatedAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return UpdatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		UpdatedAt = updatedAt;
+	}
+
+	public Date getDeletedAt() {
+		return DeletedAt;
+	}
+
+	public void setDeletedAt(Date deletedAt) {
+		DeletedAt = deletedAt;
+	}
 }
