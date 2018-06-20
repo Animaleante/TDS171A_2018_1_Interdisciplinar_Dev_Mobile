@@ -29,4 +29,12 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_main_logar"
         android:onClick="logarUsuario"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Se Cadastre"
+        android:textAlignment="center"
+        android:textColor="blue"
+        android:onClick="cadastrarUsuário"/>
 </LinearLayout>

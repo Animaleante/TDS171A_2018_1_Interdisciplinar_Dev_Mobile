@@ -23,4 +23,5 @@
     <string name="hint_confirm_senha">Confirme a senha</string>
     <string name="hint_nome">Informe seu Nome</string>
     <string name="hint_nasc">Informe a data de Nascimento</string>
+    <string name="btn_main_receitas">Todas as receitas</string>
 </resources>

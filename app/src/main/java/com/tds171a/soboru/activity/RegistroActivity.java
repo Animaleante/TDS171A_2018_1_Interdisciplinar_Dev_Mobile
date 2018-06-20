@@ -8,10 +8,15 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 import com.tds171a.soboru.R;
+import com.tds171a.soboru.models.usuario.Usuario;
 
-class RegistroActivity extends Activity{
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-    private EditText    login;
+public class RegistroActivity extends Activity{
+
+    private EditText    email;
     private EditText    senha;
     private EditText    confirmSenha;
     private EditText    nome;
@@ -25,7 +30,7 @@ class RegistroActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        login             = findViewById(R.id.edit_registro_login);
+        email             = findViewById(R.id.edit_registro_login);
         senha             = findViewById(R.id.edit_registro_senha);
         confirmSenha      = findViewById(R.id.edit_registro_confirm_senha);
         nome              = findViewById(R.id.edit_registro_nome);
@@ -34,5 +39,28 @@ class RegistroActivity extends Activity{
         fem               = findViewById(R.id.rd_registro_fem);
         notificacao_email = findViewById(R.id.cb_registro_notificacao_email);
 
+    }
+
+    public void registrarUsuario() throws ParseException {
+        if (senha == confirmSenha){
+            int sexo;
+            if(masc.isChecked()){
+                sexo = 1;
+            }else
+                sexo = 0;
+
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = date = format.parse(nasc.getText().toString());
+            Usuario usuario = new
+                Usuario(nome.getText().toString(), email.getText().toString(),
+                    senha.getText().toString(),new Date(),
+                     sexo, true );
+
+            String jsonSend = "{'Email': '" +  this.email + " ','Nasc': 'this.nasc'," +
+                    "'Sexo': "  "this.sexo,'NotificacaoEmail': this.notificacaoEmail,
+                    'RoleId': 'this.roleId', 'Nome': 'this.nome ','Senha' : 'this.senha'
+                    }";
+
+        }
     }
 }

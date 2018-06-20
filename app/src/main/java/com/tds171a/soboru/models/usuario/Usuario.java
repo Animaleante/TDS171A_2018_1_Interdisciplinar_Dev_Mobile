@@ -14,37 +14,38 @@ public class Usuario {
 	private String nome;
 	private String email;
 	private String senha;
-	private String tipo;
 	private Date nasc;
 	private int sexo;
 	private int roleId;
 	private boolean notificacaoEmail;
-	private Role role;
 	private String senhaConfirmacao;
 	private Date CreatedAt;
 	private Date UpdatedAt;
 	private Date DeletedAt;
 
+	private Role role;
 
 	public Usuario() {
 	}
 
-	public Usuario(int id, String nome, String email,
-				   String senha, String tipo, Date nasc,
-				   int sexo, int roleId, boolean notificacaoEmail,
-				   Role role, String senhaConfirmacao) {
-		this.id = id;
+	public Usuario(String nome, String email,
+				   String senha, Date nasc,
+				   int sexo, boolean notificacaoEmail) {
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
-		this.tipo = tipo;
 		this.nasc = nasc;
 		this.sexo = sexo;
-		this.roleId = roleId;
+		this.roleId = 1;
 		this.notificacaoEmail = notificacaoEmail;
-		this.role = role;
-		this.senhaConfirmacao = senhaConfirmacao;
+
 	}
+
+
+
+
+
+
 
 	/**
 	 * @return the id

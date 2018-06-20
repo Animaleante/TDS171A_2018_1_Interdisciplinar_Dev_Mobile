@@ -30,6 +30,18 @@
             android:text="@string/btn_main_logar"
             android:background="@color/colorPrimaryDark"
             android:layout_column="1"
+            android:layout_row="0"
+            android:onClick="carregaItemMenu"
+            />
+        <Button
+            android:id="@+id/btn_main_logoff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="@string/btn_logoff"
+            android:background="@color/colorPrimaryDark"
+            android:layout_column="1"
+            android:layout_row="0"
             android:onClick="carregaItemMenu"
             />
 
@@ -44,6 +56,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/hint_pesquisar"
         />
+
     <Button
         android:id="@+id/btn_main_pesquisa"
         android:layout_width="wrap_content"
@@ -53,6 +66,14 @@
         android:onClick="carregaItemMenu"
         />
 
+    <Button
+        android:id="@+id/btn_main_receitas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_main_receitas"
+        android:textAlignment="center"
+        android:onClick="carregaItemMenu"
+        />
 
     <Button
         android:id="@+id/btn_main_fav"
@@ -65,22 +86,12 @@
         />
 
     <Button
-        android:id="@+id/btn_logoff"
+        android:id="@+id/btn_main_Medidas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_logoff"
-        android:onClick="efetuarLogoff"
+        android:text="Medidas"
+        android:textAlignment="center"
+        android:onClick="carregaItemMenu"
         />
 
-    <Button
-        android:id="@+id/btn_teste"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Teste"
-        android:onClick="carregarAPI"/>
-
-    <TextView
-        android:id="@+id/txtJSON"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </LinearLayout>
