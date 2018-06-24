@@ -11,9 +11,12 @@ import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
+import com.android.volley.RequestQueue;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.tds171a.soboru.R;
@@ -39,7 +42,7 @@ import javax.annotation.Nullable;
 
 public class MedidasActivity  extends Activity{
 
-    public static TextView respostaJSONtxt;
+    public static TextView respostaJSONtxt, txt_id_medida, txt_nome_medida, txt_abre_medida;
     public static EditText edit_id, edit_nome, edit_abre;
 
 
@@ -47,9 +50,14 @@ public class MedidasActivity  extends Activity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medida);
+        txt_id_medida = findViewById(R.id.txt_id_medida);
+        txt_nome_medida = findViewById(R.id.txt_nome_medida);
+        txt_abre_medida = findViewById(R.id.txt_abre_medida);
+
+
     }
 
-    public  void gerarJSON(View v){
+    /*public  void gerarJSON(View v){
 
         respostaJSONtxt = findViewById(R.id.respostaJSONtxt);
         edit_id = findViewById(R.id.edit_id);
@@ -70,7 +78,18 @@ public class MedidasActivity  extends Activity{
                     }
                 });
         MySingleton.getInstance(this).addToRequest(stringRequest);
+    }*/
+
+    public  void gerarJSON(View v){
+        Gson gson = new Gson();
+        String resposta = "{\"Id\": 1,\"nome\": \"sample string 2\",\"abreviacao\": \"sample string 3\"}";
+        Medida medida = gson.fromJson(resposta, Medida.class);
+        txt_id_medida.setText(medida.getId());
+        txt_nome_medida.setText(medida.getNome());
+        txt_abre_medida.setText(medida.getAbreviacao());
     }
+
+
 
     public void inserirMedida(View v){
 
@@ -122,3 +141,4 @@ public class MedidasActivity  extends Activity{
 
     }
 }
+

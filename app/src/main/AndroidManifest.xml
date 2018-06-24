@@ -15,12 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.FavoritoActivity"/>
-        <activity android:name=".activity.RegistroActivity"/>
-        <activity android:name=".activity.PesquisaActivity"/>
-        <activity android:name=".activity.LoginActivity"/>
-        <activity android:name=".activity.MedidasActivity"/>
+        <activity android:name=".activity.FavoritoActivity" />
+        <activity android:name=".activity.RegistroActivity" />
+        <activity android:name=".activity.PesquisaActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.MedidasActivity" />
 
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
