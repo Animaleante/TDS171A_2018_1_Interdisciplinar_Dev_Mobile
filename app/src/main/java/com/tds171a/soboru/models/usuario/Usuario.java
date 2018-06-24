@@ -103,19 +103,6 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	/**
-	 * @return the tipo
-	 */
-	public String getTipo() {
-		return tipo;
-	}
-
-	/**
-	 * @param tipo the tipo to set
-	 */
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
 
 	/**
 	 * @return the nasc

@@ -1,6 +1,7 @@
 package com.tds171a.soboru.activity;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -30,22 +31,22 @@ public class MainActivity extends Activity {
 
         if (usuarioLogado == null){
             nomeUsuario = findViewById(R.id.app_Name);
-            edt_main_pesquisar = findViewById(R.id.edt_main_pesquisar);
+         //   edt_main_pesquisar = findViewById(R.id.edt_main_pesquisar);
             nomeUsuario.setText(R.string.app_name);
-            btn_Fav = findViewById(R.id.btn_main_fav);
+           // btn_Fav = findViewById(R.id.btn_main_fav);
             btn_Login  = findViewById(R.id.btn_login_login);
-            btn_Logoff  = findViewById(R.id.btn_main_logoff);
-            btn_Logoff.setVisibility(View.GONE);
+            //btn_Logoff  = findViewById(R.id.btn_main_logoff);
+            //btn_Logoff.setVisibility(View.GONE);
             btn_main_Medidas = findViewById(R.id.btn_main_Medidas);
         }else{
             nomeUsuario = findViewById(R.id.app_Name);
             nomeUsuario.setText(R.string.app_name + " " + usuarioLogado.getNome());
             nomeUsuario.setText(R.string.app_name);
-            btn_Fav = findViewById(R.id.btn_main_fav);
+            //btn_Fav = findViewById(R.id.btn_main_fav);
             btn_Login  = findViewById(R.id.btn_login_login);
-            btn_Login.setVisibility(View.GONE);
-            btn_Logoff  = findViewById(R.id.btn_main_logoff);
-            btn_Logoff.setVisibility(View.VISIBLE);
+            //btn_Login.setVisibility(View.GONE);
+            //btn_Logoff  = findViewById(R.id.btn_main_logoff);
+            //btn_Logoff.setVisibility(View.VISIBLE);
         }
 
 
@@ -56,18 +57,18 @@ public class MainActivity extends Activity {
             case R.id.btn_main_login:
                 carregarIntent(LoginActivity.class);
                 break;
-            case R.id.btn_main_pesquisa:
+          //  case R.id.btn_main_pesquisa:
+            //    carregarIntent(PesquisaActivity.class);
+             //   break;
+            case R.id.btn_main_receitas:
                 carregarIntent(PesquisaActivity.class);
                 break;
-            case R.id.btn_main_receitas:
-                carregarIntent(RegistroActivity.class);
-                break;
             case R.id.btn_main_fav:
-                carregarIntent(FavoritoActivity.class);
-                break;
-            case R.id.btn_main_logoff:
-                efetuarLogoff();
-                break;
+              carregarIntent(FavoritoActivity.class);
+            break;
+            //case R.id.btn_main_logoff:
+             //   efetuarLogoff();
+               // break;
             case R.id.btn_main_Medidas:
                 carregarIntent(MedidasActivity.class);
                 break;

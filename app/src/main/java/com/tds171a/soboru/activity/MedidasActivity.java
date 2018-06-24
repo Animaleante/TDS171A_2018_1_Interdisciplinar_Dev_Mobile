@@ -3,11 +3,16 @@ package com.tds171a.soboru.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkResponse;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -26,6 +31,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,9 +39,9 @@ import javax.annotation.Nullable;
 
 public class MedidasActivity  extends Activity{
 
-    public static TextView mTextView, nome, abre;
-    public String vaidarcerto;
-    List<String> teste = new ArrayList<>();
+    public static TextView respostaJSONtxt;
+    public static EditText edit_id, edit_nome, edit_abre;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,65 +50,75 @@ public class MedidasActivity  extends Activity{
     }
 
     public  void gerarJSON(View v){
-        mTextView = findViewById(R.id.respostaJSONtxt);
-        nome = findViewById(R.id.respostaJSONtxt_nome);
-        abre = findViewById(R.id.respostaJSONtxt_abre);
 
-        String url = "http://soboruapi.azurewebsites.net/api/Medidas/1";
+        respostaJSONtxt = findViewById(R.id.respostaJSONtxt);
+        edit_id = findViewById(R.id.edit_id);
+
+        String url = "http://soboruapi.azurewebsites.net/api/Medidas/" + edit_id.getText();
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        mTextView.setText(response);
+                        respostaJSONtxt.setText(response);
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        mTextView.setText("Erro");
+                        respostaJSONtxt.setText("Erro");
                     }
                 });
         MySingleton.getInstance(this).addToRequest(stringRequest);
     }
-    public  void gerarJSONFormatado(View v){
-            mTextView = findViewById(R.id.respostaJSONtxt);
-            nome = findViewById(R.id.respostaJSONtxt_nome);
-            abre = findViewById(R.id.respostaJSONtxt_abre);
 
-            String url = "http://soboruapi.azurewebsites.net/api/Medidas/1";
+    public void inserirMedida(View v){
 
-            JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET, url, null,
-                    new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-                            try {
-                                JSONArray jsonArray = response.names();
-                                for (int i = 0; i < jsonArray.length(); i++){
+        String url = "http://soboruapi.azurewebsites.net/api/Medidas/";
+        respostaJSONtxt = findViewById(R.id.respostaJSONtxt);
+        edit_nome = findViewById(R.id.edit_nome);
+        edit_abre = findViewById(R.id.edit_abre);
 
-                                    teste.add((String)jsonArray.getString(i));
-                                }
-                            } catch (JSONException e) {
-                                mTextView.setText("Deu erro");
-                                e.printStackTrace();
-                            }
-                        }
-                    }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    mTextView.setText("Deu erroResponse");
-                    error.printStackTrace();
-                }
-            });
-            MySingleton.getInstance(getApplicationContext()).addToRequest(objectRequest);
-        if (!teste.isEmpty()){
-            mTextView.setText("teste preenchido");
-            for (int i=0; i<teste.size(); i++){
-                vaidarcerto += vaidarcerto + " " + teste.get(i) + " /n";
 
+        final String stringBody = "{  \"Nome\": \" " + edit_nome.getText() +"\",  \"Abreviacao\": \""+ edit_abre.getText() +"\",  \"CreatedAt\": \"2018-06-20\",  \"UpdatedAt\": \"2018-06-20\" }";
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.i("VOLLEY", response);
             }
-            mTextView.setText(vaidarcerto);
-        }
-        }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("VOLLEY", error.toString());
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
 
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                try {
+                    return stringBody == null ? null : stringBody.getBytes("utf-8");
+                } catch (UnsupportedEncodingException uee) {
+                    VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", stringBody, "utf-8");
+                    return null;
+                }
+            }
+
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+                String responseString = "";
+                if (response != null) {
+                    responseString = String.valueOf(response.statusCode);
+                    // can get more details such as response.headers
+                }
+                return Response.success(responseString, HttpHeaderParser.parseCacheHeaders(response));
+            }
+        };
+        MySingleton.getInstance(this).addToRequest(stringRequest);
+
+    }
 }

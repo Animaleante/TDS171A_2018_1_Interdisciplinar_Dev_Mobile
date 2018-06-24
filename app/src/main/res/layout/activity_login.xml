@@ -35,6 +35,5 @@
         android:layout_height="wrap_content"
         android:text="Se Cadastre"
         android:textAlignment="center"
-        android:textColor="blue"
         android:onClick="cadastrarUsuário"/>
 </LinearLayout>

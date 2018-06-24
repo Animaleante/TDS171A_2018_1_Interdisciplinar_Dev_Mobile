@@ -4,39 +4,39 @@
     android:layout_height="match_parent" android:orientation="vertical">
 
 
+    <EditText
+        android:id="@+id/edit_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="insira um ID para pesquisa"/>
     <Button
         android:id="@+id/btn_medida_gerar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gerar"
+        android:text="Trazer medidas"
         android:onClick="gerarJSON"
         />
-    <Button
-        android:id="@+id/btn_medida_gerar_formatado"
+    <EditText
+        android:id="@+id/edit_nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gerar"
-        android:onClick="gerarJSONFormatado"
+        android:hint="insira um Nome para registar"/>
+    <EditText
+        android:id="@+id/edit_abre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="insira uma abreveação par registrar"/>
+    <Button
+        android:id="@+id/btn_medida_inserir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Inserir medida"
+        android:onClick="inserirMedida"
         />
 
     <TextView
         android:id="@+id/respostaJSONtxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/respostaJSONtxt_nome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/respostaJSONtxt_abre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-
-
-
-
 
 </LinearLayout>
